@@ -1,3 +1,16 @@
+/**
+ * IndexPage component renders the main landing page for the MediLearn application.
+ * It includes sections for interactive courses, gamified learning, flexible learning,
+ * certification, and links to the GitHub repository and other technologies used.
+ *
+ * @component
+ * @example
+ * return (
+ *   <IndexPage />
+ * )
+ *
+ * @returns {JSX.Element} The rendered landing page component.
+*/
 import DefaultLayout from "../layouts/default";
 import { Card, CardBody } from "@nextui-org/card";
 import { Button } from "@nextui-org/react";

@@ -6,6 +6,21 @@ import clsx from "clsx";
 import { useTheme } from "../hooks/use-theme";
 import { SunFilledIcon, MoonFilledIcon } from "../components/icons";
 
+/**
+ * ThemeSwitch component allows users to toggle between light and dark themes.
+ *
+ * @component
+ * @param {Object} props - The properties object.
+ * @param {string} [props.className] - Additional class names to apply to the component.
+ * @param {Object} [props.classNames] - Additional class names for specific parts of the component.
+ * @param {string} [props.classNames.base] - Class name for the base component.
+ * @param {string} [props.classNames.wrapper] - Class name for the wrapper element.
+ * @returns {JSX.Element} The rendered ThemeSwitch component.
+ *
+ * @example
+ * <ThemeSwitch className="my-custom-class" classNames={{ base: "base-class", wrapper: "wrapper-class" }} />
+*/
+
 export const ThemeSwitch = ({ className, classNames }) => {
   const [isMounted, setIsMounted] = useState(false);
 

@@ -1,3 +1,25 @@
+/**
+ * @fileoverview This file contains various React components that render SVG icons.
+ * Each icon component accepts props to customize its size and other attributes.
+ * The icons included are:
+ * - GithubIcon
+ * - MoonFilledIcon
+ * - SunFilledIcon
+ * - HeartFilledIcon
+ * - SearchIcon
+ * - LinkedinLogo
+ * - ReactLogo
+ * - ViteLogo
+ * - TailwindCSSLogo
+ * - NextUILogo
+ * - NodeJSLogo
+ * - ExpressJSLogo
+ * - MongoDBLogo
+ * - JWTLogo
+ * - PythonLogo
+ * - FlaskLogo
+*/
+
 import * as React from "react";
 import { Image } from "@nextui-org/react";
 
