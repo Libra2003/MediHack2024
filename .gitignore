@@ -1,0 +1,6 @@
+/BackEnd/.env
+/BackEnd/node_modules
+/BackEnd/dist
+/BackEnd/.vscode
+/BackEnd/.idea
+/BackEnd/.DS_Store
