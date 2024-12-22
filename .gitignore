@@ -2,3 +2,8 @@
 /Server/node_modules
 /Server/build
 /Server/dist
+
+/Client/node_modules
+/Client/build
+/Client/dist
+/Client/.env
