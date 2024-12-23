@@ -12,12 +12,19 @@
  * @returns {JSX.Element} The rendered landing page component.
 */
 import DefaultLayout from "../layouts/default";
+import { useNavigate } from "react-router-dom";
 import { Card, CardBody } from "@nextui-org/card";
 import { Button } from "@nextui-org/react";
 import { motion } from "motion/react"
 import { ViteLogo, ReactLogo, TailwindCSSLogo, NodeJSLogo, ExpressJSLogo, JWTLogo, GithubIcon, NextUILogo } from "../components/icons";
 
 export default function IndexPage() {
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    navigate("/login");
+  }
+
   return (
     <DefaultLayout>
       <div>
@@ -108,7 +115,7 @@ export default function IndexPage() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.5 }}
             >
-              <Button color="danger">
+              <Button color="danger" onPress={handleGetStarted}>
                 Get Started
               </Button>
             </motion.div>

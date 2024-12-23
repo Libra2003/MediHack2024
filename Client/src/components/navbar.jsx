@@ -8,12 +8,22 @@ import {
   NavbarMenuItem,
 } from "@nextui-org/navbar";
 import { link as linkStyles } from "@nextui-org/theme";
+import { Avatar, Button } from "@nextui-org/react";
 import clsx from "clsx";
+import { useAuth } from "../hooks/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 import { siteConfig } from "../config/site";
 import { ThemeSwitch } from "../components/theme-switch";
 
 export const Navbar = () => {
+  const auth = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate("/login");
+  }
+
   return (
     <NextUINavbar maxWidth="xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
@@ -34,7 +44,6 @@ export const Navbar = () => {
           ))}
         </div>
       </NavbarContent>
-
       <NavbarContent
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
@@ -42,13 +51,21 @@ export const Navbar = () => {
         <NavbarItem className="hidden sm:flex gap-2">
           <ThemeSwitch />
         </NavbarItem>
+        {auth.token ? (
+        <NavbarItem className="hidden sm:flex gap-2">
+          <Avatar className="w-6 h-6 text-tiny" src="https://i.pravatar.cc/150?u=a042581f4e29026024d" size="sm" isBordered color="primary" />
+        </NavbarItem>) : (
+          <NavbarItem className="hidden sm:flex gap-2">
+            <Button color="primary" size="sm" radius="sm" onPress={handleLogin}>
+              Login
+            </Button>
+          </NavbarItem>
+        )}
       </NavbarContent>
-
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
         <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>
-
       <NavbarMenu>
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {siteConfig.navMenuItems.map((item, index) => (

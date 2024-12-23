@@ -9,11 +9,18 @@
 import { Route, Routes } from "react-router-dom";
 
 import IndexPage from "./pages/index";
+import LoginPage from "./pages/login";
+import DashboardPage from "./pages/dashboard";
+import PrivateRoute from "./routes/route";
 
 function App() {
   return (
     <Routes>
-      <Route element={<IndexPage />} path="/" />
+      <Route index element={<IndexPage />} path="/" />
+      <Route element={<LoginPage />} path="/login" />
+      <Route element={<PrivateRoute/>}>
+        <Route element={<DashboardPage />} path="/dashboard" />
+      </Route>
     </Routes>
   );
 }
