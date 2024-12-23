@@ -13,6 +13,8 @@ import LoginPage from "./pages/login";
 import DashboardPage from "./pages/dashboard";
 import PrivateRoute from "./routes/route";
 
+import HowToPerformCPRPage from "./pages/modules/how-to-perform-cpr";
+
 function App() {
   return (
     <Routes>
@@ -20,6 +22,9 @@ function App() {
       <Route element={<LoginPage />} path="/login" />
       <Route element={<PrivateRoute/>}>
         <Route element={<DashboardPage />} path="/dashboard" />
+      </Route>
+      <Route element={<PrivateRoute/>}>
+        <Route element={<HowToPerformCPRPage />} path="/how-to-perform-cpr" />
       </Route>
     </Routes>
   );
