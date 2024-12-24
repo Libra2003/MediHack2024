@@ -29,12 +29,8 @@ export default function IndexPage() {
     <DefaultLayout>
       <div>
         <section className="mt-4 md:mt-4">
-          <h1 className="text-6xl font-bold m-auto text-center">
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500">
-              MEDI LEARN
-            </span>
-          </h1>
-          <p className="text-2xl font-light m-auto text-center">
+          <img src="/images/medilearnlogo.png" alt="MediLearn Logo" className="m-auto w-74 h-32" />
+          <p className="text-2xl font-light m-auto text-center mt-2">
             Micro-Learning For Medical And Health Professionals
           </p>
           <div className="mt-6 md:mt-10">
@@ -122,7 +118,7 @@ export default function IndexPage() {
           </div>
         </section>
         <section className="mt-6 md:mt-6">
-          <h2 className="text-2xl font-light m-auto text-center">Created To Participate In <span className="font-medium">MediHack 2024</span> Using:</h2>
+          <h2 className="text-2xl font-light m-auto text-center">Created To Participate In <a href="https://minimedi.devpost.com"><span className="font-medium">MiniMedi 2024</span></a> Using:</h2>
           <div className="mt-4 md:mt-6 flex justify-center items-center gap-2">
             <motion.a
               initial={{ opacity: 0, x: -100 }}

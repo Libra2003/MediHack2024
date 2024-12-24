@@ -5,7 +5,7 @@ import { CircleChartCard } from "../components/RadialChart";
 import { Icon } from "@iconify/react";
 import { tracks } from "../config/content";
 import ProfileBadge from "../components/ProfileBadge";
-import { motion } from "motion/react"
+import { motion } from "motion/react";
 
 export default function DashboardPage() {
     return (
@@ -23,7 +23,7 @@ export default function DashboardPage() {
                     whileHover={{ y: -5 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <CircleChartCard title="XP" color="success" total={1358} chartData={[{name: "Total XP", value: 780, fill: "hsl(var(--nextui-primary))"}]} />
+                    <CircleChartCard title="XP" color="danger" total={1358} chartData={[{name: "Total XP", value: 780, fill: "hsl(var(--nextui-primary))"}]} />
                 </motion.div>
                 <motion.div
                     initial={{ opacity: 0, x: -100 }}
@@ -31,7 +31,7 @@ export default function DashboardPage() {
                     whileHover={{ y: -5 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <CircleChartCard title="Level" color="success" total={1358} chartData={[{name: "XP To Next Level", value: 1000, toNext: 300, fill: "hsl(var(--nextui-primary))"}]} />
+                    <CircleChartCard title="Level" color="danger" total={1358} chartData={[{name: "XP To Next Level", value: 1000, toNext: 300, fill: "hsl(var(--nextui-primary))"}]} />
                 </motion.div>
                 <motion.div
                     initial={{ opacity: 0, x: -100 }}

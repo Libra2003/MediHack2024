@@ -1,4 +1,5 @@
 import { Link } from "@nextui-org/link";
+import { Image } from "@nextui-org/react";
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -6,6 +7,7 @@ import {
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
+  NavbarBrand,
 } from "@nextui-org/navbar";
 import { link as linkStyles } from "@nextui-org/theme";
 import { Avatar, Button } from "@nextui-org/react";
@@ -27,6 +29,15 @@ export const Navbar = () => {
   return (
     <NextUINavbar maxWidth="xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
+        <NavbarBrand className="gap-3 max-w-fit">
+          <Link
+            className="flex justify-start items-center gap-1"
+            color="foreground"
+            href="/"
+          >
+            <img src="/images/medilearnlogo.png" alt="MediLearn Logo" width="100" height="100" />
+          </Link>
+        </NavbarBrand>
         <div className="hidden lg:flex gap-4 justify-start ml-2">
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
@@ -53,10 +64,10 @@ export const Navbar = () => {
         </NavbarItem>
         {auth.token ? (
         <NavbarItem className="hidden sm:flex gap-2">
-          <Avatar className="w-6 h-6 text-tiny" src="https://i.pravatar.cc/150?u=a042581f4e29026024d" size="sm" isBordered color="primary" />
+          <Avatar className="w-6 h-6 text-tiny" src="https://i.pravatar.cc/150?u=a042581f4e29026024d" size="sm" isBordered color="danger" />
         </NavbarItem>) : (
           <NavbarItem className="hidden sm:flex gap-2">
-            <Button color="primary" size="sm" radius="sm" onPress={handleLogin}>
+            <Button color="danger" size="sm" radius="sm" onPress={handleLogin}>
               Login
             </Button>
           </NavbarItem>

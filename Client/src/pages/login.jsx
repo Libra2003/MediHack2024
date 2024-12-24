@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import DefaultLayout from "../layouts/default";
 import { Button, Input, Checkbox, Link, Form, Divider } from "@nextui-org/react";
 import { Icon } from "@iconify/react";
-import { AcmeIcon } from "../components/icons";
 import { useAuth } from "../hooks/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
@@ -32,8 +31,8 @@ export default function LoginPage() {
             <div className="flex h-full w-full items-center justify-center">
                 <div className="flex w-full max-w-sm flex-col gap-4 rounded-large">
                     <div className="flex flex-col items-center pb-6">
-                        <AcmeIcon size={60} />
-                        <p className="text-xl font-medium">Welcome Back</p>
+                        <img src="/images/medilearnlogo.png" alt="MediLearn Logo" className="w-64 h-28" />
+                        <p className="text-xl font-medium mt-4">Welcome Back</p>
                         <p className="text-small text-default-500">Log in to your account to continue</p>
                     </div>
                     <Form className="flex flex-col gap-3" validationBehavior="native" onSubmit={handleSubmit}>
@@ -82,7 +81,7 @@ export default function LoginPage() {
                                 Forgot password?
                             </Link>
                         </div>
-                        <Button className="w-full" color="primary" type="submit">
+                        <Button className="w-full" color="danger" type="submit">
                             Sign In
                         </Button>
                     </Form>

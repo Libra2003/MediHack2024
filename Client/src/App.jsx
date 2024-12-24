@@ -13,7 +13,10 @@ import LoginPage from "./pages/login";
 import DashboardPage from "./pages/dashboard";
 import PrivateRoute from "./routes/route";
 
-import HowToPerformCPRPage from "./pages/modules/how-to-perform-cpr";
+import HowToPerformCPRPage from "./pages/tracks/how-to-perform-cpr";
+
+import CPR from "./pages/modules/how-to-perform-cpr/CPR";
+import RecoveryPosition from "./pages/modules/how-to-perform-cpr/RecoveryPosition";
 
 function App() {
   return (
@@ -25,6 +28,10 @@ function App() {
       </Route>
       <Route element={<PrivateRoute/>}>
         <Route element={<HowToPerformCPRPage />} path="/how-to-perform-cpr" />
+      </Route>
+      <Route element={<PrivateRoute/>}>
+        <Route element={<CPR />} path="/how-to-perform-cpr/CPR" />
+        <Route element={<RecoveryPosition />} path="/how-to-perform-cpr/RecoveryPosition" />
       </Route>
     </Routes>
   );
