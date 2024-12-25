@@ -91,3 +91,51 @@ export const getAllUser = async (req, res, next) => {
         next(err);
     }
 };
+
+export const updateBadges = async (req, res, next) => {
+    try{
+        const updatedUser = await User.findByIdAndUpdate(
+            req.params.id,
+            {$set: {badges: req.body.badges}},
+            {new: true}
+        );
+        res.status(200).json(updatedUser);
+    }
+    catch(err) {
+        next(err);
+    }
+}
+
+export const updateCourses = async (req, res, next) => {
+    try{
+        const updatedUser = await User.findByIdAndUpdate(
+            req.params.id,
+            {$set: {courses: req.body.courses}},
+            {new: true}
+        );
+        res.status(200).json(updatedUser);
+    }
+    catch(err) {
+        next(err);
+    }
+}
+
+export const claimRewards = async (req, res, next) => {
+    try{
+        const updatedUser = await User.findByIdAndUpdate(
+            req.params.id,
+            {$set: {
+                coins: req.body.coins,
+                badges: req.body.badges,
+                xp: req.body.xp,
+                level: req.body.level,
+                rewardClaimed: true
+            }},
+            {new: true}
+        );
+        res.status(200).json(updatedUser);
+    }
+    catch(err) {
+        next(err);
+    }
+}

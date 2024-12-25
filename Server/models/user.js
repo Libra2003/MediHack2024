@@ -49,6 +49,60 @@ const UserSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
+    badges: {
+        type: [{
+            title: {
+                type: String,
+                required: true
+            },
+            description: {
+                type: String,
+                required: true
+            },
+            xp: {
+                type: Number,
+                required: true
+            },
+            icon: {
+                type: String,
+                required: true
+            }
+        }],
+        default: []
+    },
+    courses: {
+        type: [{
+            title: {
+                type: String,
+                required: true
+            },
+            description: {
+                type: String,
+                required: true
+            },
+            modules: {
+                type: [{
+                    title: {
+                        type: String,
+                        required: true
+                    },
+                    description: {
+                        type: String,
+                        required: true
+                    },
+                    completed: {
+                        type: Boolean,
+                        default: false
+                    },
+                }],
+            }
+        }],
+        default: []
+    },
+    rewardClaimed: {
+        type: Boolean,
+        default: false
+    }
 }, { timestamps: true });
 
 export default mongoose.model("User", UserSchema);

@@ -3,6 +3,7 @@
 */
 import express from "express";
 import { login, signup, checkUser } from "../controllers/authcontroller.js";
+import { verifyUser } from "../utils/verifyToken.js";
 
 /**
  * Express router to mount user authentication related functions on.

@@ -11,7 +11,7 @@ export default function HowToPerformCPRPage() {
                     title: "CPR (Cardiopulmonary Resuscitation)",
                     description: "Learn how to perform CPR to resuscitate unresponsive patients.",
                     moduleLink: "/how-to-perform-cpr/CPR",
-                    completed: false,
+                    completed: true,
                 },
                 {
                     title: "Recovery Position",

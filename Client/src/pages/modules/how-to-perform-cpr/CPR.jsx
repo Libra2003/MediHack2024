@@ -1,7 +1,36 @@
 import LearningModule from "../../learningmodule"
 import { Card } from "@nextui-org/react"
+import { useEffect } from 'react';
+import axiosInstance from "../../../utils/axiosInstance";
 
 export default function CPR() {
+    useEffect(() => {
+        document.title = "How To Perform CPR - MediLearn";
+        const accountToken = localStorage.getItem("accountToken");
+        axiosInstance.post("/auth/checkuser/", {token: accountToken}).then((res) => {
+            axiosInstance.put(`/user/courses/${res.data.user._id}`,
+                {
+                    "courses": [{
+                        "title": "How To Perform CPR",
+                        "description": "Learn the basics of CPR and how to perform it in an emergency situation.",
+                        "modules": [
+                            {
+                                "title": "CPR (Cardiopulmonary Resuscitation)",
+                                "description": "Learn how to perform CPR to resuscitate unresponsive patients.",
+                                "completed": res.data.user.courses[0].modules[0].completed
+                            },
+                            {
+                                "title": "Recovery Position",
+                                "description": "Learn how to place an unconscious patient in the recovery position.",
+                                "completed": true
+                            }
+                        ]
+                    }]
+                }
+            )
+        });
+    }, []);
+
     return (
         <LearningModule title="CPR (Cardiopulmonary Resuscitation)" description="Learn how to perform CPR to resuscitate unresponsive patients.">
             <div className="flex justify-center">

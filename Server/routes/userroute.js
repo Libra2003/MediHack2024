@@ -4,8 +4,8 @@
  * The routes are protected by middleware functions to verify admin privileges.
 */
 import express from "express";
-import { deleteUser, getAllUser, getUser, updateUser } from "../controllers/usercontroller.js";
-import { verifyAdmin, verifyToken, verifyUser } from "../utils/verifyToken.js";
+import { deleteUser, getAllUser, getUser, updateUser, updateBadges, updateCourses, claimRewards } from "../controllers/usercontroller.js";
+import { verifyAdmin } from "../utils/verifyToken.js";
 
 /**
  * Express router to mount user-related functions on.
@@ -60,5 +60,44 @@ router.get("/:id",  verifyAdmin, getUser);
  * @param {function} handler - Controller function to handle the request
 */
 router.get("/", verifyAdmin, getAllUser);
+
+/**
+ * Route to update badges for a user by ID.
+ * @name put/badges/:id
+ * @function
+ * @memberof module:routes/userroute
+ * @inner
+ * @param {string} path - Express path
+ * @param {function} middleware - Middleware to verify admin privileges
+ * @param {function} handler - Controller function to handle the request
+ * @param {function} updateBadges - Controller function to handle the request
+*/
+router.put("/badges/:id", updateBadges);
+
+/**
+ * Route to update courses for a user by ID.
+ * @name put/courses/:id
+ * @function
+ * @memberof module:routes/userroute
+ * @inner
+ * @param {string} path - Express path
+ * @param {function} middleware - Middleware to verify admin privileges
+ * @param {function} handler - Controller function to handle the request
+ * @param {function} updateCourses - Controller function to handle the request
+*/
+router.put("/courses/:id", updateCourses);
+
+/**
+ * Route to claim rewards for a user by ID.
+ * @name put/claim/:id
+ * @function
+ * @memberof module:routes/userroute
+ * @inner
+ * @param {string} path - Express path
+ * @param {function} middleware - Middleware to verify admin privileges
+ * @param {function} handler - Controller function to handle the request
+ * @param {function} claimRewards - Controller function to handle the request
+*/
+router.put("/claim/:id", claimRewards);
 
 export default router;

@@ -1,7 +1,7 @@
 import { Tooltip } from "@nextui-org/react";
 import { Icon } from "@iconify/react";
 
-export default function ProfileBadge({ name, description, xp }) {
+export default function ProfileBadge({ name, description, xp, icon }) {
     return (
         <Tooltip
             content={
@@ -13,7 +13,7 @@ export default function ProfileBadge({ name, description, xp }) {
             }
         >
             <div className="flex flex-col items-center">
-                <Icon icon="mdi:badge-account" width={32} height={32} />
+                <Icon icon={icon} width={48} height={48} />
             </div>
         </Tooltip>
     );

@@ -102,7 +102,7 @@ export const checkUser = async (req, res, next) => {
             const token = jwt.verify(usignedToken, process.env.JWT_SECRET);
             const userToVerify = await User.findById(token.id);
             if(!userToVerify) return next(createError(401, "You need to login!"));
-            return res.status(200).json({authenticated: true});
+            return res.status(200).json({authenticated: true, user: userToVerify});
         } catch(error){
             return next(createError(401, "You need to login!"));
         }
