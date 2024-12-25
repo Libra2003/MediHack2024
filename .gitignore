@@ -23,10 +23,10 @@ dist-ssr
 *.sln
 *.sw?
 
-/Server/node_modules
-/Server/dist
-/Server/dist-ssr
-/Server/.env
-/Server/.env.local
-/Server/.env.development
-/Server/.env.production
+./Server/node_modules
+./Server/dist
+./Server/dist-ssr
+./Server/.env
+./Server/.env.local
+./Server/.env.development
+./Server/.env.production
