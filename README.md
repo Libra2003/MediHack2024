@@ -1,1 +1,1 @@
-# MediHack2024
+# MediHack2024 Client
