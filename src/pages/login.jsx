@@ -111,12 +111,13 @@ export default function LoginPage() {
                         </Link>
                     </p>
                     <p className="text-center text-small">
-                        You cannot sign up at the moment. Please use the test account:
-                        <br />
-                        <b>Username:</b> TestAccount
-                        <br />
-                        <b>Password:</b> {"XGXpL~B{-SU-0BSChu|^"}
+                        The website might take a minute to load due to the free hosting service. Please be patient.
                     </p>
+                    <p className="text-center text-small">
+                        You cannot sign up at the moment. Please use one of the test accounts here: 
+                    </p>
+                    <br />
+                    <a href="https://docs.google.com/spreadsheets/d/1BIm1L_8LLyUD3ZT6gPg5PnnDupCyuF-afU7LMiiLgSE/edit?usp=sharing" target="_blank" rel="noreferrer">Test Accounts</a>
                 </div>
             </div>
         </DefaultLayout>

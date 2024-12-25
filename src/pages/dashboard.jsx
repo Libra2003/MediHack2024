@@ -57,7 +57,6 @@ export default function DashboardPage() {
         document.title = "Dashboard - MediLearn";
         const accountToken = localStorage.getItem("accountToken");
         axiosInstance.post("/auth/checkuser/", {token: accountToken}).then((res) => {
-            console.log(res.data);
             setUser(res.data.user);
             setXPData(determineXPToNextLevel(res.data.user.xp));
         });

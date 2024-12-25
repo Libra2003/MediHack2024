@@ -25,7 +25,6 @@ export default function LearningTrack({ content, title, description, children })
         document.title = "How To Perform CPR - MediLearn";
         const accountToken = localStorage.getItem("accountToken");
         axiosInstance.post("/auth/checkuser/", {token: accountToken}).then((res) => {
-            console.log(res.data);
             setUser(res.data.user);
             setRewardClaimed(res.data.user.rewardClaimed);
             setCompletedCount(res.data.user.courses[0].modules.filter(item => item.completed).length);
